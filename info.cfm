@@ -35,14 +35,6 @@
 </cfoutput>
 </cfcase>
 <cfcase value="2">
-<table width="475" border="0" cellpadding="0" cellspacing="0">
-<tr>
-	<td valign="top" nowrap width="45"><div id="sidecontainer"><div id="sidetitle">pr<span class="pagecolor">ess</span></div></div></td>
-	<td valign="top" width="430"><p style="font-size:16px; font-weight:bold;">Coming Soon</p></td>
-</tr>
-</table>
-</cfcase>
-<cfcase value="3">
 <cfquery name="infoVenues" datasource="#DSN#">
 	select *
     from infoVenues LEFT JOIN infoCities ON infoVenues.cityID=infoCities.ID
@@ -98,20 +90,27 @@
 </table>
 </div>
 </cfcase>
-<cfcase value="4">
+<cfcase value="3">
 <table width="475" border="0" cellpadding="0" cellspacing="0">
 <tr>
 	<td valign="top" nowrap width="45"><div id="sidecontainer"><div id="sidetitle">disc<span class="pagecolor">ography</span></div></div></td>
 	<td valign="top" width="430"><p><b>Coming Soon</b></p></td>
 </tr>
 </table>
-
 </cfcase>
-<cfcase value="5">
+<cfcase value="4">
 <table width="475" border="0" cellpadding="0" cellspacing="0">
 <tr>
 	<td valign="top" nowrap width="45"><div id="sidecontainer"><div id="sidetitle">flyer <span class="pagecolor">gallery</span></div></div></td>
 	<td valign="top" width="430"><p><b>Coming Soon</b></p></td>
+</tr>
+</table>
+</cfcase>
+<cfcase value="5">
+<table width="475" border="0" cellpadding="0" cellspacing="0">
+<tr>
+	<td valign="top" nowrap width="45"><div id="sidecontainer"><div id="sidetitle">sh<span class="pagecolor">op</span></div></div></td>
+	<td valign="top" width="430"><p style="font-size:16px; font-weight:bold;">Coming Soon</p></td>
 </tr>
 </table>
 </cfcase>

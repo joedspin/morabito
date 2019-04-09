@@ -1,7 +1,6 @@
 <cfparam name="form.imgtype" default="gallery">
 <cfparam name="form.imgfile" default="">
 <cfparam name="form.imgnum" default="0">
-
 <cffile
   action="upload"
   destination="#serverpath#\images\#form.imgtype#"
@@ -30,7 +29,6 @@
     WHERE name >= '#NumberFormat(form.imgnum,"000000")#.jpg'
     ORDER BY name DESC
   </cfquery>
-  <cfdump var="#changeFiles#"></cfdump>
   <cfloop query="changeFiles">
     <cffile action="rename"
       nameconflict="overwrite"
@@ -40,16 +38,13 @@
   <cffile action="rename"
     nameconflict="overwrite"
 		source="#serverPath#\images\#form.imgtype#\newfile.jpg"
-		destination="#serverPath#\images\#form.imgtype#\#NumberFormat(form.imgnum,"000000")#.jpg">
+		destination="#serverPath#\images\#form.imgtype#\#NumberFormat(form.imgnum+1,"000000")#.jpg">
 </cfif>
-<cfoutput>#loaded.serverFile#</cfoutput><br><hr>
-<cfdirectory
-  directory="#serverpath#\images\#form.imgtype#"
-  action="list"
-  filter="0*.jpg"
-  name="files"
-  type="file">
-<cfoutput query="files">
-  #name#<br>
-</cfoutput>
-  
+<cfswitch expression="#form.imgtype#">
+  <cfcase value="gallery">
+    <cflocation url="flyerGallery.cfm">
+  </cfcase>
+  <cfcase value="discography">
+    <cflocation url="discography.cfm">
+  </cfcase>    
+</cfswitch>
