@@ -20,7 +20,7 @@ p {margin-top: 0px; font-family:'Open Sans Condensed', sans-serif;}
 #chartentry {font-size: 18px; line-height:60%; margin-top:4px; margin-bottom:8px; margin-left:0px;}
 #comingsoon {position:relative; font-size:60px; color:white; width:600px; height:40px; margin-left:auto; margin-right:auto; text-align:center; margin-top: 200px;}
 #content {position: relative; width:500px; height: 329px; padding-right: 20px; top: 28px; left: 22px; z-index:99; overflow: auto; -webkit-overflow-scrolling: touch;}
-#contentFrame {position: absolute; width: 555px; height: 465px; top: 162px; left: 204px; background-color: white; border: 8px; border-style:solid; border-radius: 16px; <cfswitch expression="#menuL#"><cfcase value="2">border-color: #FFA500;</cfcase><cfcase value="3">border-color: #FF0000;</cfcase><cfcase value="4">border-color: #6600B6;</cfcase><cfcase value="5">border-color: #003CFF;</cfcase></cfswitch> z-index:98;}
+#contentFrame {position: absolute; width: 555px; height: 465px; top: 162px; left: 205px; background-color: white; border: 8px; border-style:solid; border-radius: 16px; <cfswitch expression="#menuL#"><cfcase value="2">border-color: #FFA500;</cfcase><cfcase value="3">border-color: #FF0000;</cfcase><cfcase value="4">border-color: #6600B6;</cfcase><cfcase value="5">border-color: #003CFF;</cfcase></cfswitch> z-index:98;}
 #contentHolder {position: relative; z-index:100;}
 #contentPadding {position absolute; width: 486px; height: 900px; top: -498px; left: 194px; z-index:0;}
 #homeImage {position: absolute; top: 135px; left: 184px;}

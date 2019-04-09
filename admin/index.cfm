@@ -28,29 +28,24 @@
 <table border="0" cellpadding="0" cellspacing="0" width="650">
 <tr><td width="300" valign="top">
   <p><font size="5">administrative <font color="#FFFF00">tasks</font></font></p>
-<p><a href="links.cfm">links</a><br>
-<a href="chart.cfm">picks</a><br>
-<a href="podcastAdmin.cfm">podcasts</a><br>
-<a href="perfAdmin.cfm">playdates</a><br>
-            <!---<a href="presentersAdmin.cfm">Presenters</a><br>
-            <a href="venueAdmin.cfm">venues</a><br>
-            <a href="mailAdmin.cfm">mailing list</a><br>
-send performances email<br>
-<a href="mailTest.cfm">test performances email</a><br>
-<a href="news.cfm">News</a><a href="reviewsAdmin.cfm">Reviews</a><br>
-            <a href="reviewsTopicAdmin.cfm">Review Topics </a>//---><a href="biography.cfm">biography</a><br>
-            <a href="infoEvents.cfm">venues &amp; events</a><br>
-			<!---<a href="playlistsAdmin.cfm">Playlists</a><br>
-			<a href="musicSets.cfm">Music Sets</a><br>//--->
-            <a href="privateAccessPassword.cfm">private access password</a></p>
-            </td>
-            <td width="350" valign="top">
+  <p>
+    <a href="links.cfm">links</a><br>
+    <a href="chart.cfm">picks</a><br>
+    <a href="podcastAdmin.cfm">podcasts</a><br>
+    <a href="perfAdmin.cfm">playdates</a><br>
+    <a href="biography.cfm">biography</a><br>
+    <a href="infoEvents.cfm">places</a><br>
+    <a href="discography.cfm">discography</a><br>
+    <a href="flyerGallery.cfm">flyer gallery</a><br>
+    <a href="privateAccessPassword.cfm">private access password</a></p>
+  </td>
+  <td width="350" valign="top">
   <cfquery name="hitLog" datasource="susanmorabitoRecords">
-	select *
-	from hit_counter
-	where pagename NOT LIKE '%OLD' AND sinceDate><cfqueryparam value="2013-01-01" cfsqltype="cf_sql_date">
-    order by pagename
-</cfquery>
+    select *
+    from hit_counter
+    where pagename NOT LIKE '%OLD' AND sinceDate><cfqueryparam value="2013-01-01" cfsqltype="cf_sql_date">
+      order by pagename
+  </cfquery>
 <p><font size="5">site <font color="#FFFF00">statistics</font></font></p>
 <table border="0" cellpadding="0" cellspacing="0">
 	<td><b>page</b></td>
