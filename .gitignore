@@ -1,0 +1,11 @@
+.DS_Store
+temp/
+music/
+media/
+db/
+Morabito13X/
+*.bak
+_notes/
+admin/_notes
+src/
+swf/
