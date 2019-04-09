@@ -35,8 +35,8 @@
     <a href="perfAdmin.cfm">playdates</a><br>
     <a href="biography.cfm">biography</a><br>
     <a href="infoEvents.cfm">places</a><br>
-    <a href="discography.cfm">discography</a><br>
-    <a href="flyerGallery.cfm">flyer gallery</a><br>
+    <a href="imgGallery.cfm?imgtype=discography">discography</a><br>
+    <a href="imgGallery.cfm?imgtype=gallery">flyer gallery</a><br>
     <a href="privateAccessPassword.cfm">private access password</a></p>
   </td>
   <td width="350" valign="top">

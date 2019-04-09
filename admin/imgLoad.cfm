@@ -26,13 +26,13 @@
   <cfquery name="changeFiles" dbtype="query">
     SELECT *
     FROM files
-    WHERE name >= '#NumberFormat(form.imgnum,"000000")#.jpg'
+    WHERE name > '#NumberFormat(form.imgnum,"000000")#.jpg'
     ORDER BY name DESC
   </cfquery>
   <cfloop query="changeFiles">
     <cffile action="rename"
       nameconflict="overwrite"
-      source="#serverPath#\images\#form.imgtype#\#NumberFormat(Left(name,6),"000000")#.jpg"
+      source="#serverPath#\images\#form.imgtype#\#name#"
       destination="#serverPath#\images\#form.imgtype#\#NumberFormat((Left(name,6)+1),"000000")#.jpg">
   </cfloop>
   <cffile action="rename"
@@ -40,11 +40,4 @@
 		source="#serverPath#\images\#form.imgtype#\newfile.jpg"
 		destination="#serverPath#\images\#form.imgtype#\#NumberFormat(form.imgnum+1,"000000")#.jpg">
 </cfif>
-<cfswitch expression="#form.imgtype#">
-  <cfcase value="gallery">
-    <cflocation url="flyerGallery.cfm">
-  </cfcase>
-  <cfcase value="discography">
-    <cflocation url="discography.cfm">
-  </cfcase>    
-</cfswitch>
+<cflocation url="imgGallery.cfm?imgtype=#form.imgtype#">

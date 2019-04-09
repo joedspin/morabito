@@ -13,11 +13,4 @@
   nameconflict="overwrite"
   source="#serverPath#\images\#url.imgtype#\tempfile.jpg"
   destination="#serverPath#\images\#url.imgtype#\#NumberFormat(url.right,"000000")#.jpg">
-<cfswitch expression="#url.imgtype#">
-  <cfcase value="gallery">
-    <cflocation url="flyerGallery.cfm">
-  </cfcase>
-  <cfcase value="discography">
-    <cflocation url="discography.cfm">
-  </cfcase>    
-</cfswitch>
+<cflocation url="imgGallery.cfm?imgtype=#url.imgtype#">
