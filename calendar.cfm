@@ -16,6 +16,35 @@
 <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'>
 <title>MORABITO > playdates</title>
 <cfinclude template="styleBuilder.cfm">
+<script>
+window.addEventListener('DOMContentLoaded', (event) => {
+    loadModals();
+});
+function loadModals() {
+  var content = document.getElementById('content');
+  <cfoutput query="perfs">
+    <cfif Trim(eventGraphic) NEQ "">
+      // Get the modal
+      var modal#ID# = document.getElementById('modal#ID#');
+      // Get the image and insert it inside the modal - use its "alt" text as a caption
+      var img#ID# = document.getElementById('img#ID#');
+      var mimg#ID# = document.getElementById("mimg#ID#");
+      img#ID#.onclick = function(){
+        content.style.overflow = "hidden";
+        modal#ID#.style.display = "block";
+        mimg#ID#.src = this.src;
+      }
+      // Get the <span> element that closes the modal
+      var close#ID# = document.getElementById("close#ID#");
+      // When the user clicks on <span> (x), close the modal
+      close#ID#.onclick = function() { 
+        content.style.overflow = "auto";
+        modal#ID#.style.display = "none";
+      }
+    </cfif>
+  </cfoutput>
+}
+</script>
 </head>
 <body>
 <div id="site">
@@ -58,10 +87,23 @@
 &nbsp;<br />
 <cfif eventLink NEQ ""><a href="<cfif Find("http://",eventLink) EQ 0>http://</cfif>#eventLink#" target="_blank"><cfif Trim(eventLinkLabel NEQ "")>#eventLinkLabel#<cfelse>#eventLink#</cfif></a></cfif></p></td>
 	<td width="3"><img src="images/spacer.gif" height="50" width="3" /></td>
-    <td width="177" valign="top" ><cfif Trim(eventGraphic) NEQ ""><a href="images/flyers/#eventGraphic#" target="_blank"><img src="images/flyers/#eventGraphic#" width="177" border="0" /></a><cfelse><img src="images/spacer.gif" width="177" height="267" /></cfif></td>
-    </tr></table>
-	<img src="images/spacer.gif" height="35" width="500" /><cfset datestarted=true></cfoutput>
-
-</div></div></div><!---<div id="superimpose"><img src="images/MorabitoWeb11calendarREV.jpg" width="960" height="768" /></div>//--->
+    <td width="177" valign="top" >
+      <cfif Trim(eventGraphic) NEQ "">
+  <!--        <a href="images/flyers/#eventGraphic#" target="_blank"><img src="images/flyers/#eventGraphic#" width="177" border="0" /></a>-->
+        <img id="img#ID#" class="popimg" src="images/flyers/#eventGraphic#" alt="#eventName#" style="width:177px; max-width:177px">
+          <div id="modal#ID#" class="modal">
+            <span id="close#ID#" class="close">&times;</span>
+            <img id="mimg#ID#" class="modal-content">
+          </div>
+      <cfelse>
+        <img src="images/spacer.gif" width="177" height="267" />
+      </cfif>
+    </td>
+    </tr>
+  </table>
+	<img src="images/spacer.gif" height="35" width="500" />
+  <cfset datestarted=true>
+</cfoutput>
+</div></div></div>
 </body>
 </html>

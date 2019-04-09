@@ -12,16 +12,14 @@ a:link {<cfswitch expression="#menuL#"><cfcase value="1">color: #FFFF00;</cfcase
 a:hover {<cfswitch expression="#menuL#"><cfcase value="1">color: #FFFF00;</cfcase><cfcase value="2">color: #FFA500;</cfcase><cfcase value="3">color: #FF0000;</cfcase><cfcase value="4">color: #6600B6;</cfcase><cfcase value="5">color: #003CFF;</cfcase></cfswitch> text-decoration:underline;}
 body {background-color:#000000; font-family:'Open Sans Condensed', sans-serif; overflow:hidden;}
 p {margin-top: 0px; font-family:'Open Sans Condensed', sans-serif;}
-
 .overlay {top: -768px;}
 .pagecolor {<cfswitch expression="#menuL#"><cfcase value="1">color: #FFFF00;</cfcase><cfcase value="2">color: #FFA500;</cfcase><cfcase value="3">color: #FF0000;</cfcase><cfcase value="4">color: #6600B6;</cfcase><cfcase value="5">color: #003CFF;</cfcase></cfswitch>}
 .playdate {font-size:18px; line-height:122%; max-width:250px; width:250px; margin-top:0px;}
 .playdatetop {margin-top:-2px;}
 .whitetext {color: white;}
-
 #chartentry {font-size: 18px; line-height:60%; margin-top:4px; margin-bottom:8px; margin-left:0px;}
 #comingsoon {position:relative; font-size:60px; color:white; width:600px; height:40px; margin-left:auto; margin-right:auto; text-align:center; margin-top: 200px;}
-#content {position: relative; width:500px; height: 329px; padding-right: 20px; top: 28px; left: 22px; overflow: auto; z-index:99; overflow: auto; -webkit-overflow-scrolling: touch;}
+#content {position: relative; width:500px; height: 329px; padding-right: 20px; top: 28px; left: 22px; z-index:99; overflow: auto; -webkit-overflow-scrolling: touch;}
 #contentFrame {position: absolute; width: 555px; height: 465px; top: 162px; left: 204px; background-color: white; border: 8px; border-style:solid; border-radius: 16px; <cfswitch expression="#menuL#"><cfcase value="2">border-color: #FFA500;</cfcase><cfcase value="3">border-color: #FF0000;</cfcase><cfcase value="4">border-color: #6600B6;</cfcase><cfcase value="5">border-color: #003CFF;</cfcase></cfswitch> z-index:98;}
 #contentHolder {position: relative; z-index:100;}
 #contentPadding {position absolute; width: 486px; height: 900px; top: -498px; left: 194px; z-index:0;}
@@ -60,6 +58,35 @@ a:visited #playbutton {background-position: 0px 0px;}
 #site {position: relative; width: 980px; margin-left: auto; margin-right: auto; z-index:1;}
 #spacer {color: white; line-height: 1px; font-size:4px;}
 #superimpose {opacity:0.5; position: relative; width: 960px; margin-left: auto; margin-right: auto; z-index:2;}
-
+.popimg {cursor: pointer; transition: 0.3s;}
+.popimg:hover {opacity: 0.7;}
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 200; /* Sit on top */
+  padding-top: 5vh; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;  /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+.modal-content {margin: auto; display: block; max-width: 80vw; max-height: 90vh; z-index: 200;}
+.modal-content {animation-name: zoom; animation-duration: 0.6s;}
+@keyframes zoom {from {transform:scale(0)} to {transform:scale(1)}}
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.close:hover, .close:focus {color: #bbb; text-decoration: none; cursor: pointer;}
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){.modal-content {width: 100%;}}
 </style>
 
