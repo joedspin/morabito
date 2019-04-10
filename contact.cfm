@@ -15,15 +15,6 @@
 <body>
 <div id="site">
 <div id="logo"><a href="index.cfm"><img src="images/spacer.gif" width="572" height="56" title="MORABITO" alt="HOME" border="0" /></a></div>
-<script>
-window.addEventListener('DOMContentLoaded', (event) => {
-  loadJazz();
-});
-function loadJazz() {
-  avacado = document.getElementById('avacado');
-  avacado.style.display = 'none';
-}
-</script>
 <cfinclude template="menuBuilder.cfm">
 <div id="contentHolder">
   <div id="contentFrame">
@@ -44,6 +35,15 @@ function loadJazz() {
 		    </table>
       </div>
     <cfelse>
+      <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+          loadJazz();
+        });
+        function loadJazz() {
+          avacado = document.getElementById('avacado');
+          avacado.style.display = 'none';
+        }
+      </script>
       <div style="width: 500px; height: 450px; overflow: auto; margin-top: 20px;">
         <table width="475" border="0" cellpadding="0" cellspacing="0">
           <tr>

@@ -24,7 +24,7 @@ function afterMe(n) {
   Use the arrows to move an image left or right</p>
 <cfform name="loadimg" action="imgLoad.cfm" enctype="multipart/form-data">
   <cfoutput>
-    <input type="hidden" name="imgtype" value="#url.imgtype#">insert after image &num;
+    <input type="hidden" name="imgtype" value="#url.imgtype#">insert before image &num;
     <input type="text" id="imgnum" name="imgnum" value="#lastImage#" readonly style="text-align: center;" size="5">
   </cfoutput>
   <input type="file" name="imgfile">
