@@ -94,7 +94,8 @@
 <table width="475" border="0" cellpadding="0" cellspacing="0">
 <tr>
 	<td valign="top" nowrap width="45"><div id="sidecontainer"><div id="sidetitle">disc<span class="pagecolor">ography</span></div></div></td>
-	<td valign="top" width="430"><p><b>Coming Soon</b></p></td>
+	<cfset imgtype="discography">
+	<td valign="top" width="430"><cfinclude template="gallery.cfm"></td>
 </tr>
 </table>
 </cfcase>
@@ -102,7 +103,8 @@
 <table width="475" border="0" cellpadding="0" cellspacing="0">
 <tr>
 	<td valign="top" nowrap width="45"><div id="sidecontainer"><div id="sidetitle">flyer <span class="pagecolor">gallery</span></div></div></td>
-	<td valign="top" width="430"><p><b>Coming Soon</b></p></td>
+  <cfset imgtype="gallery">
+	<td valign="top" width="430"><cfinclude template="gallery.cfm"></td>
 </tr>
 </table>
 </cfcase>

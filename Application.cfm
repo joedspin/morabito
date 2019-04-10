@@ -3,3 +3,4 @@
 <CFSET varDateODBC = CreateODBCDateTime(Now())>
 <cfset lineFeed=chr(13)&chr(10)>
 <cfset hardFeed=chr(10)&chr(34)>
+<cfset serverpath="D:\home\djmorabito.com\wwwroot">

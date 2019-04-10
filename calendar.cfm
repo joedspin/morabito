@@ -89,7 +89,6 @@ function loadModals() {
 	<td width="3"><img src="images/spacer.gif" height="50" width="3" /></td>
     <td width="177" valign="top" >
       <cfif Trim(eventGraphic) NEQ "">
-  <!--        <a href="images/flyers/#eventGraphic#" target="_blank"><img src="images/flyers/#eventGraphic#" width="177" border="0" /></a>-->
         <img id="img#ID#" class="popimg" src="images/flyers/#eventGraphic#" alt="#eventName#" style="width:177px; max-width:177px">
           <div id="modal#ID#" class="modal">
             <span id="close#ID#" class="close">&times;</span>
