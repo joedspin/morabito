@@ -88,5 +88,15 @@ a:visited #playbutton {background-position: 0px 0px;}
 .close:hover, .close:focus {color: #bbb; text-decoration: none; cursor: pointer;}
 /* 100% Image Width on Smaller Screens */
 @media only screen and (max-width: 700px){.modal-content {width: 100%;}}
+.smbutton {
+    font-family:'Open Sans Condensed', sans-serif;
+    font-size: 15px;
+    border-radius: 0px;
+    border-color: #003CFF;
+    color: #003CFF;
+    background-color: white;
+    padding: 2px 10px 4px 10px;
+    margin-top: 6px;
+    cursor: pointer;
+  }
 </style>
-
