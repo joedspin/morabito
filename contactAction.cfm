@@ -86,5 +86,6 @@
   </table>
 </cfmail>
 <cfset Session.booking="done">
+  <cflocation url="contact.cfm?booking=sent">
 </cfif>
-<cflocation url="contact.cfm?booking=sent">
+<cflocation url="contact.cfm">

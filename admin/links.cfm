@@ -7,8 +7,10 @@
 	from menuR
   order by menuRnum, menuRRnum
 </cfquery>
+<cfset rn1=RandRange(0,9999)>
+<cfset rn2=RandRange(0,9999)>
 <cfform name="allLinks" action="linksAction.cfm" method="post">
-
+<p>Click on a sprite to replace it. Put _blank in the target column to open the link in a new tab.</p>
 <table border="1" bordercolor="#999999" cellpadding="4" cellspacing="0" style="border-collapse: collapse;">
 <cfoutput query="allLinks">
   <tr>
@@ -17,6 +19,7 @@
     <td>#menuRnum#</td>
     <td>#menuRRnum#</td>
     <td><cfinput type="text" name="target#ID#" value="#target#" size="20" required="no" maxlength="10"></td>
+    <td><a href="linksSprite.cfm?r=#menuRnum#&rr=#menuRRnum#"><img src="../images/menuR#menuRnum##menuRRnum#.png?rn1=#rn1#&rn2=#rn2#" height="30"></a></td>
 	</tr>
 </cfoutput>
 <tr>
