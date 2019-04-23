@@ -17,6 +17,5 @@
 <cfinclude template="menuBuilder.cfm">
 <div id="homeImage"><img src="images/mw11_home.jpg" width="610" height="579" title="MORABITO" alt="MORABITO" /></div>
 </div>
-<!---<div id="superimpose"><img src="images/MorabitoWeb11homeREV.jpg" width="960" height="768" /></div>//--->
 </body>
 </html>

@@ -1,6 +1,6 @@
 <cfset thisPage="calendar">
 <cfset menuL=3>
-<cfset menuR=1>
+<cfset menuR=3>
 <cfset menuRR=0>
 <cfquery name="perfs" datasource="susanMorabitoRecords">
 	select *
@@ -47,6 +47,12 @@ function loadModals() {
 </script>
 </head>
 <body>
+<cfoutput query="perfs">
+  <div id="modal#ID#" class="modal">
+    <span id="close#ID#" class="close">&times;</span>
+    <img id="mimg#ID#" class="modal-content">
+  </div>
+</cfoutput>
 <div id="site">
 <div id="logo"><a href="index.cfm"><img src="images/spacer.gif" width="572" height="56" title="MORABITO" alt="HOME" border="0" /></a></div>
 <cfinclude template="menuBuilder.cfm">
@@ -90,10 +96,6 @@ function loadModals() {
     <td width="177" valign="top" >
       <cfif Trim(eventGraphic) NEQ "">
         <img id="img#ID#" class="popimg" src="images/flyers/#eventGraphic#" alt="#eventName#" style="width:177px; max-width:177px">
-          <div id="modal#ID#" class="modal">
-            <span id="close#ID#" class="close">&times;</span>
-            <img id="mimg#ID#" class="modal-content">
-          </div>
       <cfelse>
         <img src="images/spacer.gif" width="177" height="267" />
       </cfif>

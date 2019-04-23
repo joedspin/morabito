@@ -30,6 +30,16 @@
 			<cfqueryparam value="#form.eventLink#" cfsqltype="cf_sql_char">,
 			<cfqueryparam value="#form.visible#" cfsqltype="cf_sql_bit">)
 	</cfquery>
+  <cfquery name="checkCity" datasource="susanMorabitoRecords">
+    select ID from infoCities
+    where cityName = <cfqueryparam value="#form.cityLabel#" cfsqltype="cf_sql_char">
+  </cfquery>
+  <cfif checkCity.recordCount EQ 0>
+    <cfquery name="addCity" datasource="susanMorabitoRecords">
+      insert into infoCities (cityName, stateName)
+      values (<cfqueryparam value="#form.cityLabel#" cfsqltype="cf_sql_char">, 'USA')
+    </cfquery>  
+  </cfif>
 <cfif isDefined("Save")>
 		<cflocation URL="perfAdmin.cfm">
 	</cfif>

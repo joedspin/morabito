@@ -12,6 +12,14 @@
 <cfinclude template="styleBuilder.cfm">
 </head>
 <body>
+<cfif menuRR EQ "3" OR menuRR EQ "4">
+  <cfif menuRR EQ "3">
+    <cfset imgtype="discography">
+  <cfelse>
+    <cfset imgtype="gallery">
+  </cfif>
+  <cfinclude template="galleryModals.cfm">
+</cfif>
 <div id="site">
 <div id="logo"><a href="index.cfm"><img src="images/spacer.gif" width="572" height="56" title="MORABITO" alt="HOME" border="0" /></a></div>
 <cfinclude template="menuBuilder.cfm">
@@ -45,8 +53,7 @@
 	<td valign="top" nowrap width="45"><div id="sidecontainer"><div id="sidetitle">selected&nbsp;<span class="pagecolor">venues</span></div></div></td>
 	<td valign="top" width="430">
 <cfset lastcity="">
-<cfoutput query="infoVenues">
-<cfif cityName NEQ lastcity><cfif lastcity NEQ ""></p>
+<cfoutput query="infoVenues"><cfif cityName NEQ lastcity><cfif lastcity NEQ ""></p>
 </cfif><p><b>#Replace(cityName," ","&nbsp;","all")#<cfif stateName EQ "DC">&nbsp;D.C.</cfif></b><cfset vstart=false><br /></cfif><cfif vstart>&nbsp;&middot; </cfif>#Replace(venueName," ","&nbsp;","all")#<cfset lastcity=cityName><cfset vstart=true></cfoutput>
 </p></td>
 </tr>
@@ -94,7 +101,6 @@
 <table width="475" border="0" cellpadding="0" cellspacing="0">
 <tr>
 	<td valign="top" nowrap width="45"><div id="sidecontainer"><div id="sidetitle">disc<span class="pagecolor">ography</span></div></div></td>
-	<cfset imgtype="discography">
 	<td valign="top" width="430"><cfinclude template="gallery.cfm"></td>
 </tr>
 </table>
@@ -103,7 +109,6 @@
 <table width="475" border="0" cellpadding="0" cellspacing="0">
 <tr>
 	<td valign="top" nowrap width="45"><div id="sidecontainer"><div id="sidetitle">flyer <span class="pagecolor">gallery</span></div></div></td>
-  <cfset imgtype="gallery">
 	<td valign="top" width="430"><cfinclude template="gallery.cfm"></td>
 </tr>
 </table>
@@ -120,7 +125,6 @@
       </div>
     </div></div>
 </div>
-<!---<div id="superimpose"><img src="images/MorabitoWeb11infoREV.jpg" width="960" height="768" /></div>//--->
 </body>
 </html>
 
