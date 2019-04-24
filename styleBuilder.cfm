@@ -12,7 +12,9 @@ a:link {color:black; text-decoration:none;}
 a:link {<cfswitch expression="#menuL#"><cfcase value="1">color: #FFFF00;</cfcase><cfcase value="2">color: #FFA500;</cfcase><cfcase value="3">color: #FF0000;</cfcase><cfcase value="4">color:#6600B6;</cfcase><cfcase value="5">color: #003CFF;</cfcase></cfswitch> text-decoration:none;}
 	</cfif>
 a:hover {<cfswitch expression="#menuL#"><cfcase value="1">color: #FFFF00;</cfcase><cfcase value="2">color: #FFA500;</cfcase><cfcase value="3">color: #FF0000;</cfcase><cfcase value="4">color: #6600B6;</cfcase><cfcase value="5">color: #003CFF;</cfcase></cfswitch> text-decoration:underline;}
-body {background-color:#000000; font-family:'Open Sans Condensed', sans-serif; overflow:hidden;}
+.contactLink {color: black;}
+.contactLink:hover {text-decoration: none; color: black;}
+body {background-color:#000000; font-family:'Open Sans Condensed', sans-serif; }
 p {margin-top: 0px; font-family:'Open Sans Condensed', sans-serif;}
 .overlay {top: -768px;}
 .pagecolor {<cfswitch expression="#menuL#"><cfcase value="1">color: #FFFF00;</cfcase><cfcase value="2">color: #FFA500;</cfcase><cfcase value="3">color: #FF0000;</cfcase><cfcase value="4">color: #6600B6;</cfcase><cfcase value="5">color: #003CFF;</cfcase></cfswitch>}
@@ -63,47 +65,13 @@ a:visited #playbutton {background-position: 0px 0px;}
 #superimpose {opacity:0.5; position: relative; width: 960px; margin-left: auto; margin-right: auto; z-index:2;}
 .popimg {cursor: pointer; transition: 0.3s;}
 .popimg:hover {opacity: 0.7;}
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 200; /* Sit on top */
-  padding-top: 5vh; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%;  /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-}
-.modal-content {margin: auto; display: block; max-width: 80vw; max-height: 90vh; 
-  -webkit-transform:translate3d(0,0,0); z-index: 200; position: relative;}
+.modal {display: none; position: fixed; z-index: 200; padding-top: 5vh; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgb(0,0,0); background-color: rgba(0,0,0,0.9);}
+.modal-content {margin: auto; display: block; max-width: 80vw; max-height: 90vh; -webkit-transform:translate3d(0,0,0); z-index: 200; position: relative;}
 .modal-content {animation-name: zoom; animation-duration: 0.6s;}
 @keyframes zoom {from {transform:scale(0)} to {transform:scale(1)}}
-.close {
-  position: fixed;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 60px;
-  font-weight: bold;
-  transition: 0.3s;
-  cursor: pointer;
-  max-width: 100vw;
-  max-height: 100vh;
-}
+.close {position: fixed; top: 15px; right: 35px; color: #f1f1f1; font-size: 60px; font-weight: bold; transition: 0.3s; cursor: pointer; max-width: 100vw; max-height: 100vh;}
 .close:hover, .close:focus {color: #bbb; text-decoration: none; cursor: pointer;}
 /* 100% Image Width on Smaller Screens */
 @media only screen and (max-width: 700px){.modal-content {width: 100%;}}
-.smbutton {
-    font-family:'Open Sans Condensed', sans-serif;
-    font-size: 15px;
-    border-radius: 0px;
-    border-color: #003CFF;
-    color: #003CFF;
-    background-color: white;
-    padding: 2px 10px 4px 10px;
-    margin-top: 6px;
-    cursor: pointer;
-  }
+.smbutton {font-family:'Open Sans Condensed', sans-serif; font-size: 15px; border-radius: 0px; border-color: #003CFF; color: #003CFF; background-color: white; padding: 2px 10px 4px 10px; margin-top: 6px; cursor: pointer;}
 </style>

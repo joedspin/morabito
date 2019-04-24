@@ -30,7 +30,7 @@
                <cfelse>
                  <cfset targetInsert=''>
                </cfif>
-               <td align="right" height="91" style="font-size: 32px;"><cfif linkname EQ "booking [inquiry]" AND url.booking EQ "sent"><font color="red" size="4">successfully sent &nbsp;&nbsp;</font></cfif><a style="color: black;" href="#linkurl#"#targetInsert#>#Replace(Replace(linkname,'[','<span class="pagecolor">'),']','</span>')#</a></td>
+               <td align="right" height="91" style="font-size: 32px;"><cfif linkname EQ "booking [inquiry]" AND url.booking EQ "sent"><font color="red" size="4">successfully sent &nbsp;&nbsp;</font></cfif><a class="contactLink" href="#linkurl#"#targetInsert# style="color: black;">#Replace(Replace(linkname,'[','<span class="pagecolor">'),']','</span>')#</a></td>
              </tr>
            </cfoutput>
 		    </table>
